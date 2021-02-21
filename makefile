@@ -47,7 +47,6 @@ ROOT := $(patsubst %/,%,$(dir $(lastword $(MAKEFILE_LIST))))
 include $(ROOT)/make/system-id.mk
 
 # configure some directories that are relative to wherever ROOT_DIR is located
-BIN_DIR := $(ROOT)/obj
 TOOLS_DIR ?= $(ROOT)/tools
 DL_DIR := $(ROOT)/downloads
 
@@ -55,7 +54,7 @@ DL_DIR := $(ROOT)/downloads
 all : $(TARGETS)
 
 clean :
-	rm -rf $(BIN_DIR)/*
+	rm -f Src/*.o
 
 $(TARGETS) :
 	$(MAKE) TARGET=$@ $(TARGET_PREFIX)$@.bin
