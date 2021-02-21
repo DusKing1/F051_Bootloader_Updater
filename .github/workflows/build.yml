@@ -20,6 +20,9 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v1
+        
+      - name: Pull Bootloader
+        run: git clone --recursive https://github.com/AlkaMotors/F051_Bootloader
 
       - name: Install ARM SDK
         run: make arm_sdk_install
