@@ -50,34 +50,34 @@ jobs:
         uses: canastro/copy-file-action@master
         with:
           source: "BOOTLOADER_UPDATER_PA2.bin"
-          target: "obj/BOOTLOADER_UPDATER_PA2.bin"
+          target: "make/BOOTLOADER_UPDATER_PA2.bin"
             
       - name: Move PA2 HEX
         uses: canastro/copy-file-action@master
         with:
           source: "BOOTLOADER_UPDATER_PA2.hex"
-          target: "obj/BOOTLOADER_UPDATER_PA2.hex"
+          target: "make/BOOTLOADER_UPDATER_PA2.hex"
             
       - name: Move PB4 BIN
         uses: canastro/copy-file-action@master
         with:
           source: "BOOTLOADER_UPDATER_PB4.bin"
-          target: "obj/BOOTLOADER_UPDATER_PB4.bin"          
+          target: "make/BOOTLOADER_UPDATER_PB4.bin"          
         
       - name: Move PB4 HEX
         uses: canastro/copy-file-action@master
         with:
           source: "BOOTLOADER_UPDATER_PB4.hex"
-          target: "obj/BOOTLOADER_UPDATER_PB4.hex"                
+          target: "make/BOOTLOADER_UPDATER_PB4.hex"                
 
       - name: Upload Bin Files
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.ARTIFACT_NAME }}-BIN
-          path: obj/*.bin
+          path: make/*.bin
       
       - name: Upload Hex Files
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.ARTIFACT_NAME }}-HEX
-          path: obj/*.hex
+          path: make/*.hex
