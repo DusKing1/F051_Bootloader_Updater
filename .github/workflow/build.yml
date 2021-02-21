@@ -21,6 +21,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v1
 
+
       - name: Install ARM SDK
         run: make arm_sdk_install
 
