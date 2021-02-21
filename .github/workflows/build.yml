@@ -46,33 +46,29 @@ jobs:
       - name: Build All Targets
         run: make all
         
-      - name: Copy Artifacts
+      - name: Move PA2 BIN
         uses: canastro/copy-file-action@master
-        steps:
-        - uses: actions/checkout@master
-        - name: Move PA2 BIN
-          uses: canastro/copy-file-action@master
-          with:
-            source: "BOOTLOADER_UPDATER_PA2.bin"
-            target: "obj/BOOTLOADER_UPDATER_PA2.bin"
+        with:
+          source: "BOOTLOADER_UPDATER_PA2.bin"
+          target: "obj/BOOTLOADER_UPDATER_PA2.bin"
             
-        - name: Move PA2 HEX
-          uses: canastro/copy-file-action@master
-          with:
-            source: "BOOTLOADER_UPDATER_PA2.hex"
-            target: "obj/BOOTLOADER_UPDATER_PA2.hex"
+      - name: Move PA2 HEX
+        uses: canastro/copy-file-action@master
+        with:
+          source: "BOOTLOADER_UPDATER_PA2.hex"
+          target: "obj/BOOTLOADER_UPDATER_PA2.hex"
             
-        - name: Move PB4 BIN
-          uses: canastro/copy-file-action@master
-          with:
-            source: "BOOTLOADER_UPDATER_PB4.bin"
-            target: "obj/BOOTLOADER_UPDATER_PB4.bin"          
+      - name: Move PB4 BIN
+        uses: canastro/copy-file-action@master
+        with:
+          source: "BOOTLOADER_UPDATER_PB4.bin"
+          target: "obj/BOOTLOADER_UPDATER_PB4.bin"          
         
-        - name: Move PB4 HEX
-          uses: canastro/copy-file-action@master
-          with:
-            source: "BOOTLOADER_UPDATER_PB4.hex"
-            target: "obj/BOOTLOADER_UPDATER_PB4.hex"                
+      - name: Move PB4 HEX
+        uses: canastro/copy-file-action@master
+        with:
+          source: "BOOTLOADER_UPDATER_PB4.hex"
+          target: "obj/BOOTLOADER_UPDATER_PB4.hex"                
 
       - name: Upload Bin Files
         uses: actions/upload-artifact@v2
